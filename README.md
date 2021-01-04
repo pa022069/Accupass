@@ -5,40 +5,40 @@
 ## 1. 環境設定
 
 ```
-● 編輯器使用 visual studio code
-● 安裝環境：
-    ○ SwiperJS
-        ■ npm i swiper
-        ■ yarn add node-sass@4.14.
-    ○ jQuery
-        ■ npm i jquery
-    ○ React Router
-        ■ npm i react-router-dom
-    ○ Redux
-        ■ npm install --save react-redux
-        ■ npm install --save redux
-● css 樣式使用scss 格式撰寫，命名為BEM模式，使用Bootstrap套件
-● 專案使用create-react-app 建置
-    ○ npx create-react-app www
-● 使用sourcetree 做 github 版控
+    ● 編輯器使用 visual studio code
+    ● 安裝環境：
+        ○ SwiperJS
+            ■ npm i swiper
+            ■ yarn add node-sass@4.14.
+        ○ jQuery
+            ■ npm i jquery
+        ○ React Router
+            ■ npm i react-router-dom
+        ○ Redux
+            ■ npm install --save react-redux
+            ■ npm install --save redux
+    ● css 樣式使用scss 格式撰寫，命名為BEM模式，使用Bootstrap套件
+    ● 專案使用create-react-app 建置
+        ○ npx create-react-app www
+    ● 使用sourcetree 做 github 版控
 ```
 ## 2. 切版
 
 ```
-● List 頁面架構 (main)
-    ○ 標題 main__title
-    ○ 清單 main__list
-        ■ 項目 group
-            ● 圖片 group__img
-            ● 資訊 group__info
-                ○ 標題 title
-                ○ 地址 address
-● Content 頁面架構 (content)
-    ○ 標題 content__title
-        ■ 標題 title
-        ■ 園區開放 open
-        ■ 收費入場 pay
-        ■ 提醒 remind
+    ● List 頁面架構 (main)
+        ○ 標題 main__title
+        ○ 清單 main__list
+            ■ 項目 group
+                ● 圖片 group__img
+                ● 資訊 group__info
+                    ○ 標題 title
+                    ○ 地址 address
+    ● Content 頁面架構 (content)
+        ○ 標題 content__title
+            ■ 標題 title
+            ■ 園區開放 open
+            ■ 收費入場 pay
+            ■ 提醒 remind
 ```
 ```
     ○ 資訊內容 content__info
