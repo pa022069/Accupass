@@ -55,6 +55,7 @@
         ■ 地圖 (Google map api)
 ```
 3. 撰寫React
+```
     ● 架構：
        ○ Layout.js
           ■ 列表頁 List.js
