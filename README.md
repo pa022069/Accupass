@@ -1,5 +1,6 @@
 # Accupass 面試測驗
-[測試連結](ttp://www.our-work.com.tw/creative/jeffrey/homework/)
+
+[測試連結](http://www.our-work.com.tw/creative/jeffrey/homework/)
 
 ## 1. 環境設定
 
