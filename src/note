@@ -1,0 +1,15 @@
+景點
+    1. address: 地址
+    2. category: 分類
+    3. district: 地區
+    4. introduction: 介紹
+    5. name: 名稱
+    6. open_status: 是否開放
+    7. open_time: 開放時間
+    8. remind: 備註
+    9. service: 服務項目
+    10. target: 目標對象
+    11. tel: 電話
+    12. ticket: 門票/收費
+    13. url: 網站
+    14. zipcode: 郵遞區號
