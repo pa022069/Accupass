@@ -6,7 +6,7 @@ const ListGroup = (props) => {
         if (e.images.length > 0) {
             return `url(${props.item.images[0].src})`
         } else {
-            return '/'
+            return 'url(dist/images/no-image.png)'
         }
     }
     return (

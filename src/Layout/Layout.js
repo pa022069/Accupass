@@ -52,6 +52,11 @@ const Layout = (props) => {
     return (
         loading ? <div className="loading"><span>Loading...</span></div> :
             <Fragment>
+                {/* <Route exact path='/' component={() => <IndexList/>} />
+                <Route path='/:id'
+                    render={(props) => (
+                        <PageContent {...props} data={data} />
+                    )} /> */}
                 <Route exact path='/creative/jeffrey/homework/' component={() => <IndexList/>} />
                 <Route path='/creative/jeffrey/homework/:id'
                     render={(props) => (

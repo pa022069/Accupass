@@ -37,6 +37,7 @@ const Content = (props) => {
             </div>
             <div className="content__info">
                 <div className="img">
+                    {data.images.length !== 0 ? 
                     <Swiper
                         spaceBetween={0}
                         slidesPerView={1}
@@ -50,6 +51,7 @@ const Content = (props) => {
                             }}></div></SwiperSlide>
                         })}
                     </Swiper>
+                    : <div className='noImage'/>}
                 </div>
                 <div className="intro">
                     <h2>景點介紹</h2>
