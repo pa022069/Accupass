@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 import { Route } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
@@ -11,8 +11,9 @@ import PageContent from "./Page/Content";
 
 const Layout = (props) => {
     const dispatch = useDispatch();
-    const data = useSelector(state => state.data);
-    const loading = useSelector(state => state.loading);
+    // const data = useSelector(state => state.data);
+    // const loading = useSelector(state => state.loading);
+    const {data, loading} = useSelector(state => state)
 
     useEffect(() => {
         // console.log(props.match.params.page)
@@ -22,10 +23,11 @@ const Layout = (props) => {
         // } else {
         //     getAttractions('1')
         // }
-        getAttractions('1')
-        // setTimeout(() => {
-        //     dispatch(loadingDone())
-        // }, 3000)
+
+        // getAttractions('1')
+        setTimeout(() => {
+            dispatch(loadingDone())
+        }, 3000)
     }, [])
 
     const getAttractions = (e) => {
@@ -51,18 +53,25 @@ const Layout = (props) => {
     }
     return (
         loading ? <div className="loading"><span>Loading...</span></div> :
-            <Fragment>
+            <>
                 {/* <Route exact path='/' component={() => <IndexList/>} />
                 <Route path='/:id'
                     render={(props) => (
                         <PageContent {...props} data={data} />
                     )} /> */}
-                <Route exact path='/creative/jeffrey/homework/' component={() => <IndexList/>} />
-                <Route path='/creative/jeffrey/homework/:id'
+
+                <Route exact path='/' component={() => <IndexList/>} />
+                <Route path='/:id'
                     render={(props) => (
                         <PageContent {...props} data={data} />
                     )} />
-            </Fragment>
+
+                    {/* <Route exact path='/creative/jeffrey/homework/' component={() => <IndexList/>} />
+                <Route path='/creative/jeffrey/homework/:id'
+                    render={(props) => (
+                        <PageContent {...props} data={data} />
+                    )} /> */}
+            </>
     );
 }
 
