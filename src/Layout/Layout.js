@@ -37,7 +37,8 @@ const Layout = (props) => {
 
         let config = {
             withCredentials: true,
-            baseURL: 'https://www.travel.taipei/open-api/zh-tw'
+            baseURL: 'https://www.travel.taipei/open-api/zh-tw',
+            headers: {"Access-Control-Allow-Origin": "*"}
         }
         let useAxios = axios.create(config);
         let getData = useAxios.get('/Attractions/All/?page=1');
@@ -73,8 +74,8 @@ const Layout = (props) => {
                         <PageContent {...props} data={data} />
                     )} /> */}
 
-                <Route exact path='/' component={() => <IndexList/>} />
-                <Route path='/:id'
+                <Route exact path='/Accupass/build/' component={() => <IndexList/>} />
+                <Route path='/Accupass/build/:id'
                     render={(props) => (
                         <PageContent {...props} data={data} />
                     )} />
