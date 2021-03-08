@@ -4,6 +4,8 @@ import { Route } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { loadingDone, setList } from '../action/controlAction';
 
+import axios from 'axios';
+
 import $ from 'jquery';
 
 import IndexList from "./List";
@@ -24,32 +26,43 @@ const Layout = (props) => {
         //     getAttractions('1')
         // }
 
-        // getAttractions('1')
-        setTimeout(() => {
-            dispatch(loadingDone())
-        }, 3000)
+        getAttractions('1')
+        // setTimeout(() => {
+        //     dispatch(loadingDone())
+        // }, 3000)
     }, [])
 
     const getAttractions = (e) => {
-        const cors = 'https://cors-anywhere.herokuapp.com/';
-        const url = `https://www.travel.taipei/open-api/zh-tw/Attractions/All/?page=${e}`;
-        $.ajax({
-            url: `${cors}${url}`,
-            method: 'GET',
-            dataType: 'json',
-            headers: {
-                "Access-Control-Allow-Headers": "X-Requested-With",
-                "X-Requested-With": "XMLHttpRequest"
-            },
-            data: []
-        })
-            .done((success) => {
-                console.log(success)
-                dispatch(setList(success.data))
-            })
-            .fail((error) => {
-                console.log(error)
-            })
+        dispatch(loadingDone())
+
+        let config = {
+            withCredentials: true,
+            baseURL: 'https://www.travel.taipei/open-api/zh-tw'
+        }
+        let useAxios = axios.create(config);
+        let getData = useAxios.get('/Attractions/All/?page=1');
+
+        console.log(getData)
+
+        // const cors = 'https://cors-anywhere.herokuapp.com/';
+        // const url = `https://www.travel.taipei/open-api/zh-tw/Attractions/All/?page=${e}`;
+        // $.ajax({
+        //     url: `${cors}${url}`,
+        //     method: 'GET',
+        //     dataType: 'json',
+        //     headers: {
+        //         "Access-Control-Allow-Headers": "X-Requested-With",
+        //         "X-Requested-With": "XMLHttpRequest"
+        //     },
+        //     data: []
+        // })
+        //     .done((success) => {
+        //         console.log(success)
+        //         dispatch(setList(success.data))
+        //     })
+        //     .fail((error) => {
+        //         console.log(error)
+        //     })
     }
     return (
         loading ? <div className="loading"><span>Loading...</span></div> :
